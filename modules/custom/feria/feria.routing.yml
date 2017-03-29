@@ -1,0 +1,78 @@
+Feria_home:
+  path: '/feria/home'
+  defaults:
+    _controller: '\Drupal\feria\Controller\FeriaController::home'
+  requirements:
+    _permission: 'access content'
+  
+Feria_enterprisesList:
+  path: '/feria/enterprisesList'
+  defaults:
+    _controller: '\Drupal\feria\Controller\FeriaController::enterprisesList'
+  requirements:
+    _permission: 'access content'
+
+Feria_galleries:
+  path: '/feria/galleries'
+  defaults:
+    _controller: '\Drupal\feria\Controller\FeriaController::galleries'
+  requirements:
+    _permission: 'access content'
+
+Feria_stands:
+  path: '/feria/stands'
+  defaults:
+    _controller: '\Drupal\feria\Controller\FeriaController::stands'
+  requirements:
+    _permission: 'access content'
+
+Feria_schedule:
+  path: '/feria/schedule'
+  defaults:
+    _controller: '\Drupal\feria\Controller\FeriaController::schedule'
+  requirements:
+    _permission: 'access content'
+  
+Feria_maps:
+  path: '/feria/maps'
+  defaults:
+    _controller: '\Drupal\feria\Controller\FeriaController::maps'
+  requirements:
+    _permission: 'access content'
+
+Feria_admin:
+ path: '/admin/config/system/feria'
+ defaults:
+   _controller:  '\Drupal\feria\Controller\FeriaAdminController::home'
+   _title: 'Administración Feria'
+ requirements:
+   _permission: 'administer site configuration'
+
+Pages_Info.get:
+  path: 'feria-pages/get'
+  defaults: { _controller: '\Drupal\feria\Controller\DataController::get_pageinfo' }
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+
+Pages_Info.put:
+  path: 'feria-pages/put'
+  defaults: { _controller: '\Drupal\feria\Controller\DataController::put_pageinfo' }
+  methods:  [PUT]
+  requirements:
+    _access: 'TRUE'
+
+Pages_Info.post:
+  path: 'feria-pages/post'
+  defaults: { _controller: '\Drupal\feria\Controller\DataController::post_pageinfo' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
+
+Pages_Info.delete:
+  path: 'feria-pages/delete'
+  defaults: { _controller: '\Drupal\feria\Controller\DataController::delete_pageinfo' }
+  methods:  [DELETE]
+  requirements:
+    _access: 'TRUE'
+   

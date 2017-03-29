@@ -1,0 +1,49 @@
+PageInfo.view:
+  route_name: entity.PageInfo.canonical
+  base_route: entity.PageInfo.canonical
+  title: Vista
+
+PageInfo.page_edit:
+  route_name: entity.PageInfo.edit_form
+  base_route: entity.PageInfo.canonical
+  title: Edición
+##### Static Content ######
+StaticContent.view:
+  route_name: entity.StaticContent.canonical
+  base_route: entity.StaticContent.canonical
+  title: Vista
+
+StaticContent.page_edit:
+  route_name: entity.StaticContent.edit_form
+  base_route: entity.StaticContent.canonical
+  title: Edición
+##### Carousel ######
+Carousel.view:
+  route_name: entity.Carousel.canonical
+  base_route: entity.Carousel.canonical
+  title: Vista
+
+Carousel.page_edit:
+  route_name: entity.Carousel.edit_form
+  base_route: entity.Carousel.canonical
+  title: Edición
+##### Events Content ######
+Events.view:
+  route_name: entity.Events.canonical
+  base_route: entity.Events.canonical
+  title: Vista
+
+Events.page_edit:
+  route_name: entity.Events.edit_form
+  base_route: entity.Events.canonical
+  title: Edición
+##### Links ######
+Links.view:
+  route_name: entity.Links.canonical
+  base_route: entity.Links.canonical
+  title: Vista
+
+Links.page_edit:
+  route_name: entity.Links.edit_form
+  base_route: entity.Links.canonical
+  title: Edición

@@ -1,0 +1,41 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+function bolsa_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'empresa_simple':
+        return t('This is help text for the simple page.');
+    case 'help.page.page_example':
+      return t("This is help text created in page example's implementation of hook_help().");
+  }
+}
+
+
+/**
+ * Theme hook
+ */
+function bolsa_theme($theme, $title, $description, $comments, $rows, $login_form) {
+    return [
+        'enterpriseprofile' => [
+            'variables' => ['form' => null,'base_url' => null,'products' => null, 'rows' => null,'description' => null, 'comments'=> null],
+            'template' => 'enterpriseprofile'
+        ],
+        'find' => [
+            'variables' => ['form' => null,'base_url' => null,'products' => null, 'rows' => null,'description' => null, 'comments'=> null ],
+            'template' => 'find'
+        ],
+        'sitemap' => [
+            'variables' => ['form' => null,'base_url' => null,'products' => null, 'rows' => null,'description' => null, 'comments'=> null],
+            'template' => 'sitemap'
+        ],
+        'login' => [
+            'variables' => ['form' => null,'base_url' => null,'products' => null, 'rows' => null,'description' => null, 'comments'=> null],
+            'template' => 'login'
+        ],
+        'profile' => [
+            'variables' => ['form' => null,'base_url' => null,'products' => null, 'rows' => null,'description' => null, 'comments'=> null],
+            'template' => 'profile'
+        ]
+    ];
+}

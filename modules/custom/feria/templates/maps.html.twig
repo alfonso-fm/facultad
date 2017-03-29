@@ -1,0 +1,95 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .li-pills{float: none;display: inline-block;}
+    .a-pills {padding:5px !important;}
+    .panel-up {border-top:0px;}
+</style>
+<div>
+    <div property="schema:text">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>{{ description }}</h4>
+                    <h8>{{ comments }}</h8>
+                </div>
+            </div>
+        </div>
+		<hr />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Mapas</div>
+                        <div class="panel-body">
+                            <div class="container-fluid">
+                                <div id="map" style="min-height:400px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#tab1danger" data-toggle="tab"><i class="fa fa-twitter" ></i></a></li>
+                                <li>               <a href="#tab2danger" data-toggle="tab"><i class="fa fa-facebook"></i></a></li>
+                                <li>               <a href="#tab3danger" data-toggle="tab"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                            <div class="panel tab-content panel-body panel-default panel-up">
+                                <div class="tab-pane fade in active" id="tab1danger" style="max-height:500px;overflow:auto;">
+                                    <a class="twitter-timeline" href="https://twitter.com/BolsaFi">Tweets by TwitterDev</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                </div>
+                                <div class="tab-pane fade" id="tab2danger">FaceBook</div>
+                                <div class="tab-pane fade" id="tab3danger">Linkedin</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="nav nav-pills nav-stacked">
+                               {% for item in links %}
+                                    {% if item.Type == 2 %}
+                                        <li class="li-pills"><a href="{{ item.URL }}" class="btn btn-local a-pills">{{ item.Text }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">¿Quienes Somos?</div>
+                        <div class="panel-body">
+                            {{ static.who|replace({'%Here%': static.who})|raw }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Oficina</div>
+                        <div class="panel-body">
+                            {{ static.office|replace({'%Here%': static.office})|raw }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function initMap() {
+        var fi = {lng: -99.184259, lat: 19.331711};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: fi
+        });
+        var marker = new google.maps.Marker({
+            position: fi,
+            map: map
+        });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwBatUXttsvA8p_G6ef2THXPXW0b-hCfA&callback=initMap"></script>

@@ -1,0 +1,191 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .li-pills{float: none;display: inline-block;}
+    .a-pills {padding:5px !important;}
+    .panel-up {border-top:0px;}
+    /* Events Calendar contain */
+    .tiva-events-calendar.full .tiva-events-calendar-wrap {margin: 25px 0 40px 0;border: 1px solid #dedade;box-shadow: 0 0 5px 2px rgba(145,145,145,.35);
+    -moz-border-radius-bottomleft: 4px;-webkit-border-bottom-left-radius: 4px;border-bottom-left-radius: 4px;-moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-right-radius: 4px;border-bottom-right-radius: 4px;-moz-border-radius-topright: 4px;-webkit-border-top-right-radius: 4px;border-top-right-radius: 4px;
+    -moz-border-radius-topleft: 4px;-webkit-border-top-left-radius: 4px;border-top-left-radius: 4px;border-collapse: collapse;border-spacing: 0;}
+    .calendar-table {margin-bottom: 0 !important;}
+    .calendar-title ,  .calendar-btn {text-align: center !important;background: #5AA4A3;color: #ffffff;height: 30px;vertical-align: middle !important;}
+    .calendar-btn {padding: 0 !important;}
+    .calendar-btn span {cursor: pointer;font-size: 13px !important;}
+    .calendar-title  {font-size: 15px;font-weight: bold;padding-top: 12px !important;padding-left: 30px !important;}
+    .calendar-title span {position: relative;color: #fff;font-weight: bold;font-size: 15px;line-height: 20px;}
+    .calendar-title i {position: absolute;left: -22px;top: -1px;}
+    .calendar-table tr th {text-align: center;color: #5AA4A3;background: #eeeeee;font-size: 14px;}
+    .calendar-table tr th,  .calendar-table tr td {width: 14.285714285714285%;}
+    .calendar-day-blank {background: #f6f6f6;}
+    .calendar-day-normal {height: 60px;font-size: 16px;text-align: right !important;padding: 6px 10px !important;color: #666;}
+    .calendar-day-today {background: #d5e9e9;}
+    .calendar-day-weekend {color: #ef4f69;line-height: 20px;font-size: 16px;}
+    .calendar-event-name {color: #ffffff;background: #567BD2;font-size: 11px;margin-top: 5px;text-align: center;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;line-height: 20px;padding: 0 3px;cursor: pointer;}
+    .calendar-event-name span {color: #ffffff;font-size: 11px;line-height: 20px;}
+    .calendar-event-name.no-name {opacity: 0;visibility: hidden;}
+    .calendar-event-name.color-1 {background: #567BD2;}
+    .calendar-event-name.color-2 {background: #13baff;}
+    .calendar-event-name.color-3 {background: #669933;}
+    .calendar-event-name.color-4 {background: #ff8a23;}
+    .calendar-event-name.first-day {margin-right: -11px;-moz-border-radius-topright: 0;-webkit-border-top-right-radius: 0;border-top-right-radius: 0;-moz-border-radius-bottomright: 0;-webkit-border-bottom-right-radius: 0;border-bottom-right-radius: 0;}
+    .calendar-event-name.middle-day {margin-left: -11px;margin-right: -11px;-webkit-border-radius: 0;-moz-border-radius: 0;border-radius: 0;}
+    .calendar-event-name.middle-day span {opacity: 0;	}
+    .calendar-event-name.last-day {margin-left: -11px;-moz-border-radius-topleft: 0;-webkit-border-top-left-radius: 0;border-top-left-radius: 0;-moz-border-radius-bottomleft: 0;-webkit-border-bottom-left-radius: 0;border-bottom-left-radius: 0;}
+    .calendar-event-name.last-day span {opacity: 0;	}
+    /* Event list */
+    .tiva-event-list-full {padding: 15px;background: #eeeeee;display: none;}
+    .event-item {width: 100%;border-top: 1px dotted #666;margin-top: 20px;padding-top: 20px;}
+    .event-item:first-child {border-top: none;margin-top: 0;padding-top: 0;}
+    .event-item-left {width: 20%;margin-right: 2%;}
+    .event-item-right {width: 78%;}
+    .event-image img {width: 100%;border: 1px solid #eee;}
+    .event-name {font-size: 17px;color: #5AA4A3;margin-bottom: 4px;}
+    .event-time, .event-date {color: #ef4f69;font-size: 14px;}
+    .event-time i, .event-date i {margin-right: 5px;}
+    .event-intro {color: #666;font-size: 12px;}
+    .link {cursor: pointer;}
+    .event-image {text-align: center;margin-bottom: 20px;}
+    .event-image img {max-width: 100%;border: 1px solid #eee;}
+    .event-name {font-size: 22px;color: #5AA4A3;margin-bottom: 15px;}
+    .event-time,  .event-date,  .event-location {font-size: 12px;}
+    .event-time i,  .event-date i,  .event-location i {margin-right: 5px;width: 14px;}
+    .event-location i {font-size: 18px;}
+    .event-desc {color: #666;border-top: 1px solid #e2e2e2;padding-top: 15px;margin-top: 15px;margin-bottom: 22px;line-height: 22px;font-size: 14px;}
+    .event-link {margin-bottom: 30px;}
+    .event-link a {color: #fff;background: #5AA4A3;padding: 8px 10px 8px 10px;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;font-size: 14px;border: 0;cursor: pointer;position: relative;}
+    .event-link a:hover {text-decoration: none;}
+    .event-link a i {margin-right: 5px;}
+    /* Responsive */
+    @media (min-width: 768px) {
+        .tiva-event-list-full .event-item-left {margin-right: 2% !important;}
+        .tiva-event-list-full .event-item-left.pull-left, .tiva-event-list-full .event-item-right.pull-left {float: left !important;}
+    }
+    @media (max-width: 768px) {
+        .btn-change-date {display: none;}
+        .calendar-day-normal,  .calendar-day-blank {padding: 2px !important;}
+        .calendar-table tr th {padding: 5px 3px !important;}
+        .tiva-event-list-full .event-item-left {margin-bottom: 10px !important;}
+        .tiva-event-list-full .event-item-left, .tiva-event-list-full .event-item-right {width: 100%;}
+    }
+</style>
+<div>
+    <div property="schema:text">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>{{ description }}</h4>
+                    <h8>{{ comments }}</h8>
+                </div>
+            </div>
+        </div>
+		<hr />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Programación</div>
+                        <div class="panel-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="list-group">
+                                        {% for item in events %}
+                                            <a href="#" class="list-group-item">
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <img src="{{ file_url(item.uri) }}" alt="{{ item.Title }}" width="100px" height="100px">
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <h4>{{ item.Title }}</h4>
+                                                        <div class="event-date"><i class="fa fa-calendar-o" ></i>{{ item.Date|date('d/m/Y') }}  </div>
+                                                        <div class="event-date"><i class="fa fa-street-view"></i>{{ item.Place }}</div>
+                                                        <div class="event-time"><i class="fa fa-clock-o"    ></i>{{ item.Date|date('H:i:s', "America/Mexico_City") }} - {{ item.final|date('H:i:s', "America/Mexico_City") }}</div>
+                                                        <div class="event-intro">{{ item.Detail }}</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#tab1danger" data-toggle="tab"><i class="fa fa-twitter" ></i></a></li>
+                                <li>               <a href="#tab2danger" data-toggle="tab"><i class="fa fa-facebook"></i></a></li>
+                                <li>               <a href="#tab3danger" data-toggle="tab"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                            <div class="panel tab-content panel-body panel-default panel-up">
+                                <div class="tab-pane fade in active" id="tab1danger" style="max-height:500px;overflow:auto;">
+                                    <a class="twitter-timeline" href="https://twitter.com/BolsaFi">Tweets by TwitterDev</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                </div>
+                                <div class="tab-pane fade" id="tab2danger">FaceBook</div>
+                                <div class="tab-pane fade" id="tab3danger">Linkedin</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Ubicación</div>
+                                <div class="panel-body">
+                                    <div id="map" style="min-height:200px"></div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="nav nav-pills nav-stacked">
+                               {% for item in links %}
+                                    {% if item.Type == 2 %}
+                                        <li class="li-pills"><a href="{{ item.URL }}" class="btn btn-local a-pills">{{ item.Text }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">¿Quienes Somos?</div>
+                        <div class="panel-body">
+                            {{ static.who|replace({'%Here%': static.who})|raw }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Oficina</div>
+                        <div class="panel-body">
+                            {{ static.office|replace({'%Here%': static.office})|raw }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function initMap() {
+        var fi = {lng: -99.184259, lat: 19.331711};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: fi
+        });
+        var marker = new google.maps.Marker({
+            position: fi,
+            map: map
+        });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwBatUXttsvA8p_G6ef2THXPXW0b-hCfA&callback=initMap"></script>

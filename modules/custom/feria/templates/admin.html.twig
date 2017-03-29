@@ -1,0 +1,27 @@
+<div> 
+	<div property="schema:text">
+		<div class="container-fluid">
+                <div class="layout-column layout-column--half col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Configuración de Paginas</div>
+                        <div class="panel-body">
+                            <select name="age" stle="width:100px;">
+                             {% for item in pagesId %}
+                                <option value="{{ item.Id }}">{{ item.keyName }}</option>
+                            {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layout-column layout-column--half col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Configuración de Redes</div>
+                        <div class="panel-body">
+                            JAJAJA02
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+bolsa_portada:
+  path: '/bolsa/portada'
+  defaults:
+    _controller: '\Drupal\bolsa\Controller\BolsaController::portada'
+    _title: 'Feria'
+  requirements:
+    _permission: 'access content'
+
+bolsa_find:
+  path: '/bolsa/find'
+  defaults:
+    _controller: '\Drupal\bolsa\Controller\BolsaController::find'
+  requirements:
+    _permission: 'access content'
+
+bolsa_enterpriseprofile:
+  path: '/bolsa/enterpriseprofile'
+  defaults:
+    _controller: '\Drupal\bolsa\Controller\BolsaController::enterpriseprofile'
+  requirements:
+    _permission: 'access content'
+
+bolsa_login:
+  path: '/bolsa/login'
+  defaults:
+    _controller: '\Drupal\bolsa\Controller\BolsaController::login'
+  requirements:
+    _permission: 'access content'
+
+bolsa_profile:
+  path: '/bolsa/profile'
+  defaults:
+    _controller: '\Drupal\bolsa\Controller\BolsaController::profile'
+  requirements:
+    _permission: 'access content'
+
+bolsa_sitemap:
+  path: '/bolsa/sitemap'
+  defaults:
+    _controller: '\Drupal\bolsa\Controller\BolsaController::sitemap'
+  requirements:
+    _permission: 'access content'

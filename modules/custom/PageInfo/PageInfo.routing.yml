@@ -1,0 +1,171 @@
+entity.PageInfo.canonical:
+  path: '/admin/config/system/PageInfo/{PageInfo}'
+  defaults:
+    _entity_view: 'PageInfo'
+    _title: 'Contenido de las Páginas'
+  requirements:
+    _entity_access: 'PageInfo.view'
+
+entity.PageInfo.collection:
+  path: '/admin/config/system/PageInfo/list'
+  defaults:
+    _entity_list: 'PageInfo'
+    _title: 'Lista de Páginas'
+  requirements:
+    _permission: 'view PageInfo entity'
+
+entity.PageInfo.edit_form:
+  path: '/admin/config/system/PageInfo/{PageInfo}/edit'
+  defaults:
+    _entity_form: PageInfo.edit
+    _title: 'Edición de la Información'
+  requirements:
+    _entity_access: 'PageInfo.edit'
+
+###### StaticContent ######
+entity.StaticContent.canonical:
+  path: '/admin/config/system/StaticContent/{StaticContent}'
+  defaults:
+    _entity_view: 'StaticContent'
+    _title: 'Contenido de las Páginas'
+  requirements:
+    _entity_access: 'StaticContent.view'
+
+entity.StaticContent.collection:
+  path: '/admin/config/system/StaticContent/list'
+  defaults:
+    _entity_list: 'StaticContent'
+    _title: 'Lista de Páginas'
+  requirements:
+    _permission: 'view PageInfo entity'
+
+entity.StaticContent.edit_form:
+  path: '/admin/config/system/StaticContent/{StaticContent}/edit'
+  defaults:
+    _entity_form: StaticContent.edit
+    _title: 'Edición de la Información'
+  requirements:
+    _entity_access: 'StaticContent.edit'
+
+###### Carousel ######
+entity.Carousel.canonical:
+  path: '/admin/config/system/Carousel/{Carousel}'
+  defaults:
+    _entity_view: 'Carousel'
+    _title: 'Contenido del Carrusel'
+  requirements:
+    _entity_access: 'Carousel.view'
+
+entity.Carousel.collection:
+  path: '/admin/config/system/Carousel/list'
+  defaults:
+    _entity_list: 'Carousel'
+    _title: 'Lista de Elementos del Carrusel'
+  requirements:
+    _permission: 'view PageInfo entity'
+
+entity.Carousel.edit_form:
+  path: '/admin/config/system/Carousel/{Carousel}/edit'
+  defaults:
+    _entity_form: Carousel.edit
+    _title: 'Edición del Elemento del Carrusel'
+  requirements:
+    _entity_access: 'Carousel.edit'
+
+entity.Carousel.delete_form:
+  path: '/admin/config/system/Carousel/{Carousel}/delete'
+  defaults:
+    _entity_form: Carousel.delete
+    _title: 'Borrado del Elemento del Carrusel'
+  requirements:
+    _entity_access: 'Carousel.delete'
+
+Carousel.Carousel_add:
+  path: '/admin/config/system/Carousel/add'
+  defaults:
+    _entity_form: Carousel.add
+    _title: 'Agregar elemento en el Carrusel'
+  requirements:
+    _entity_create_access: 'Carousel'
+
+###### Links ######
+entity.Links.canonical:
+  path: '/admin/config/system/Links/{Links}'
+  defaults:
+    _entity_view: 'Links'
+    _title: 'Links Feria del Empleo'
+  requirements:
+    _entity_access: 'Links.view'
+
+entity.Links.collection:
+  path: '/admin/config/system/Links/list'
+  defaults:
+    _entity_list: 'Links'
+    _title: 'link de Páginas'
+  requirements:
+    _permission: 'view PageInfo entity'
+
+entity.Links.edit_form:
+  path: '/admin/config/system/Links/{Links}/edit'
+  defaults:
+    _entity_form: Links.edit
+    _title: 'Edición de los Links'
+  requirements:
+    _entity_access: 'Links.edit'
+
+entity.Links.delete_form:
+  path: '/admin/config/system/Links/{Links}/delete'
+  defaults:
+    _entity_form: Links.delete
+    _title: 'Borrado de los links'
+  requirements:
+    _entity_access: 'Links.delete'
+
+Links.Links_add:
+  path: '/admin/config/system/Links/add'
+  defaults:
+    _entity_form: Links.add
+    _title: 'Agregar Links'
+  requirements:
+    _entity_create_access: 'Links'
+
+###### Events ######
+entity.Events.canonical:
+  path: '/admin/config/system/Events/{Events}'
+  defaults:
+    _entity_view: 'Events'
+    _title: 'Eventos'
+  requirements:
+    _entity_access: 'Events.view'
+
+entity.Events.collection:
+  path: '/admin/config/system/Events/list'
+  defaults:
+    _entity_list: 'Events'
+    _title: 'Lista de Eventos de la Feria'
+  requirements:
+    _permission: 'view PageInfo entity'
+
+entity.Events.edit_form:
+  path: '/admin/config/system/Events/{Events}/edit'
+  defaults:
+    _entity_form: Events.edit
+    _title: 'Edición del Evento'
+  requirements:
+    _entity_access: 'Events.edit'
+
+entity.Events.delete_form:
+  path: '/admin/config/system/Events/{Events}/delete'
+  defaults:
+    _entity_form: Events.delete
+    _title: 'Borrado del Evento'
+  requirements:
+    _entity_access: 'Events.delete'
+
+Events.Events_add:
+  path: '/admin/config/system/Events/add'
+  defaults:
+    _entity_form: Events.add
+    _title: 'Agregar Eventos para la Feria'
+  requirements:
+    _entity_create_access: 'Events'

@@ -1,0 +1,17 @@
+Carousel.Carousel_add:
+  route_name: Carousel.Carousel_add
+  title: 'Agregar'
+  appears_on:
+    - entity.Carousel.collection
+
+Events.Events_add:
+  route_name: Events.Events_add
+  title: 'Agregar'
+  appears_on:
+    - entity.Events.collection 
+
+Links.Links_add:
+  route_name: Links.Links_add
+  title: 'Agregar'
+  appears_on:
+    - entity.Links.collection 

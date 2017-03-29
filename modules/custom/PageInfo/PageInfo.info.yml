@@ -1,0 +1,7 @@
+name: PageInfo
+type: module
+description: 'Entidades usadas en la Bolsa de Trabajo'
+package: Bolsa de Trabajo
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'BolsaDeTrabajo'

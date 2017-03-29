@@ -1,0 +1,38 @@
+# Define the menu links for this module
+
+entity.PageInfo.collection:
+  title: 'Lista de Páginas'
+  route_name: entity.PageInfo.collection
+  description: 'Lista de Páginas'
+  parent: system.admin_config_development
+  weight: 10
+
+entity.StaticContent.collection:
+  title: 'Datos del Portal'
+  route_name: entity.StaticContent.collection
+  description: 'Datos del Portal'
+  parent: system.admin_config_development
+  weight: 10
+
+entity.Carousel.collection:
+  title: 'Carrusel'
+  route_name: entity.Carousel.collection
+  description: 'Carrusel Principal del Portal'
+  parent: system.admin_config_development
+  weight: 10
+
+entity.Links.collection:
+  title: 'Enlaces en las Páginas'
+  route_name: entity.Links.collection
+  description: 'Enlaces en las Páginas'
+  parent: system.admin_config_development
+  weight: 10
+
+entity.Events.collection:
+  title: 'Programación de la Feria'
+  route_name: entity.Events.collection
+  description: 'Programación de la Feria'
+  parent: system.admin_config_development
+  weight: 10
+
+

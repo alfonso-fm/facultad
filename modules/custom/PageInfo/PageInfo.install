@@ -1,0 +1,63 @@
+<?php
+
+function PageInfo_schema() {
+    $schema['PageInfo'] = array(
+        'fields' => array(
+            'id'          =>array('type'       => 'int','size' => 'small'    ,'not null' => TRUE,'default' => 0,),
+            'uuid'        =>array('mysql_type' => 'binary','length' => 36    ,'not null' => TRUE,'default' => '',),
+            'pagename'    =>array('type'       => 'varchar','length' => 30   ,'not null' => TRUE ,),
+            'header'      =>array('type'       => 'varchar','length' => 100  ,'not null' => TRUE ,),
+            'description' =>array('type'       => 'varchar','length' => 500  ,'not null' => TRUE ,),
+            'comments'    =>array('type'       => 'varchar','length' => 500  ,'not null' => TRUE ,),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}
+
+function PageInfo_install() {
+    $fields = array(
+        'id'          => 1,
+        'pagename'    => 'home',
+        'header'      => 'Facultad de Ingeniería / Feria del Empleo 2017',
+        'description' => 'Estas son las empresas y organizaciones que participan como expositores en la Feria del Empleo de la Facultad de Ingeniería.',
+        'comments'    => 'Inauguración: Lunes 10 de abril 12:00 horas. Lunes 10 y Martes 11 de abril horario feria: 10:00 a 17:00 horas',
+    );
+    db_insert('PageInfo')->fields($fields)->execute();
+
+    $fields = array(
+        'id'          => 2,
+        'pagename'    => 'stands',
+        'header'      => 'Facultad de Ingeniería / Feria del Empleo 2017',
+        'description' => 'Ubicación de los stands en la facultad',
+        'comments'    => 'Inauguración: Lunes 10 de abril 12:00 horas. Lunes 10 y Martes 11 de abril horario feria: 10:00 a 17:00 horas',
+    );
+    db_insert('PageInfo')->fields($fields)->execute();
+
+    $fields = array(
+        'id'          => 3,
+        'pagename'    => 'companies',
+        'header'      => 'Facultad de Ingeniería / Feria del Empleo 2017',
+        'description' => 'Estas son las empresas y organizaciones que participan como expositores en la Feria del Empleo de la Facultad de Ingeniería.',
+        'comments'    => 'Inauguración: Lunes 10 de abril 12:00 horas. Lunes 10 y Martes 11 de abril horario feria: 10:00 a 17:00 horas',
+    );
+    db_insert('PageInfo')->fields($fields)->execute();
+
+    $fields = array(
+        'id'          => 4,
+        'pagename'    => 'schedule',
+        'header'      => 'Facultad de Ingeniería / Feria del Empleo 2017',
+        'description' => 'Horarios y Presentaciones Programadas',
+        'comments'    => 'Inauguración: Lunes 10 de abril 12:00 horas. Lunes 10 y Martes 11 de abril horario feria: 10:00 a 17:00 horas',
+    );
+    db_insert('PageInfo')->fields($fields)->execute();
+
+    $fields = array(
+        'id'          => 5,
+        'pagename'    => 'maps',
+        'header'      => 'Facultad de Ingeniería / Feria del Empleo 2017',
+        'description' => 'Mapa y Forma de Llegar',
+        'comments'    => 'Inauguración: Lunes 10 de abril 12:00 horas. Lunes 10 y Martes 11 de abril horario feria: 10:00 a 17:00 horas',
+    );
+    db_insert('PageInfo')->fields($fields)->execute();
+}

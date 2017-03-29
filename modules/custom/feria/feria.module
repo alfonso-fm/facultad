@@ -1,0 +1,41 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+function feria_preprocess_page(&$variables) {
+  global $base_root, $base_path;
+  $variables['path'] = $base_path;
+}
+
+function feria_theme($theme, $title, $description, $comments, $rows, $links){  
+    return [
+        'home' => [
+            'variables' => ['form' => null,'base_url' => null,'static' => null, 'companies' => null, links => null, 'description' => null, 'comments'=> null, 'carousel1'=>null, 'carousel2'=>null, 'news'=>null],
+            'template' => 'home'
+        ],
+        'enterprisesList' => [
+            'variables' => ['form' => null,'base_url' => null,'static' => null, 'companies' => null, links => null, 'description' => null, 'comments'=> null ],
+            'template' => 'enterprisesList'
+        ],
+        'galleries' => [
+            'variables' => ['form' => null,'base_url' => null,'static' => null, 'companies' => null, links => null, 'description' => null, 'comments'=> null],
+            'template' => 'galleries'
+        ],
+        'stands' => [
+            'variables' => ['form' => null,'base_url' => null,'static' => null, 'companies' => null, links => null, 'description' => null, 'comments'=> null],
+            'template' => 'stands'
+        ],
+        'schedule' => [
+            'variables' => ['form' => null,'base_url' => null,'static' => null, 'companies' => null, links => null, 'description' => null, 'comments'=> null, 'events'=> null],
+            'template' => 'schedule'
+        ],
+        'maps' => [
+            'variables' => ['form' => null,'base_url' => null,'static' => null, 'companies' => null, links => null, 'description' => null, 'comments'=> null],
+            'template' => 'maps'
+        ],
+        'admin' => [
+            'variables' => ['form' => null,'base_url' => null, 'pagesId'=> null],
+            'template' => 'admin'
+        ]
+    ];
+}

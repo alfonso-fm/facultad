@@ -1,0 +1,36 @@
+feria_menu.inicio:
+   title: 'Home'
+   description: 'Bienvenidos'
+   parent: main
+   menu_name: main
+   route_name: Feria_home
+
+feria_menu.schedule:
+   title: 'Calendario'
+   description: 'Calendario de Actividades'
+   parent: main
+   menu_name: main
+   route_name: Feria_schedule
+
+feria_menu.enterprisesList:
+   title: 'Empresas'
+   description: 'Empresas participantes'
+   parent: main
+   menu_name: main
+   route_name: Feria_enterprisesList
+
+feria_menu.stands:
+   title: 'Stands'
+   description: 'Stands en la Facultad'
+   parent: main
+   menu_name: main
+   route_name: Feria_stands
+
+feria_menu.maps:
+   title: 'Ubicación'
+   description: 'La Ubicación de la Feria'
+   parent: main
+   menu_name: main
+   route_name: Feria_maps
+
+
